@@ -1,0 +1,36 @@
+---
+import { Icon } from "astro-icon/components";
+---
+
+<a
+  href="https://wa.me/919751228819"
+  target="_blank"
+  rel="noopener noreferrer"
+  aria-label="Chat with us on WhatsApp at +91 97512 28819"
+  class="whatsapp-contact fixed bottom-5 right-5 z-40 inline-flex size-14 items-center justify-center rounded-full bg-[#25D366] text-white shadow-lg transition hover:bg-[#1fb95a] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#25D366]"
+>
+  <Icon name="simple-icons:whatsapp" class="size-7" />
+</a>
+
+<style>
+  .whatsapp-contact {
+    animation: whatsapp-pulse 1.8s ease-out infinite;
+  }
+
+  @keyframes whatsapp-pulse {
+    0%,
+    100% {
+      box-shadow: 0 0 0 0 rgb(37 211 102 / 45%), 0 10px 15px -3px rgb(0 0 0 / 15%);
+    }
+
+    55% {
+      box-shadow: 0 0 0 10px rgb(37 211 102 / 0%), 0 10px 15px -3px rgb(0 0 0 / 15%);
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .whatsapp-contact {
+      animation: none;
+    }
+  }
+</style>

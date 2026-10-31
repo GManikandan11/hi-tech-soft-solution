@@ -6,16 +6,11 @@ import PricingCard from "@/components/pricing.astro";
 
 const pricing = [
   {
-    name: "Personal",
-    price: "Free",
-    popular: false,
+    name: "Silver",
+    price: "Single user edition For single PC",
+    popular: true,
     features: [
-      "Lifetime free",
-      "Up to 3 users",
-      "Unlimited Pages",
-      "Astro Sub domain",
-      "Basic Integrations",
-      "Community Support",
+      "Rs. 22,500",
     ],
     button: {
       text: "Get Started",
@@ -23,42 +18,14 @@ const pricing = [
     },
   },
   {
-    name: "Startup",
-    price: {
-      monthly: "$19",
-      annual: "$16",
-      discount: "10%",
-      original: "$24",
-    },
+    name: "Gold",
+    price: "Unlimited multi-user edition For multiple PCs on LAN environment",
     popular: true,
     features: [
-      "All Free Features",
-      "Up to 20 users",
-      "20 Custom domains",
-      "Unlimited Collaborators",
-      "Advanced Integrations",
-      "Priority Support",
-    ],
+      "Rs. 67,500"    ],
     button: {
       text: "Get Started",
       link: "#",
-    },
-  },
-  {
-    name: "Enterprise",
-    price: "Custom",
-    popular: false,
-    features: [
-      "All Pro Features",
-      "Unlimited Custom domains",
-      "99.99% Uptime SLA",
-      "SAML & SSO Integration",
-      "Dedicated Account Manager",
-      "24/7 Phone Support",
-    ],
-    button: {
-      text: "Contact us",
-      link: "/contact",
     },
   },
 ];
@@ -67,14 +34,13 @@ const pricing = [
 <Layout title="Pricing">
   <Container>
     <Sectionhead>
-      <Fragment slot="title">Pricing</Fragment>
+      <Fragment slot="title">Tally Prime</Fragment>
       <Fragment slot="desc">
-        Simple & Predictable pricing. No Surprises.
+        TallyPrime Plans That Fit Your Business
       </Fragment>
     </Sectionhead>
 
-    <div
-      class="grid md:grid-cols-3 gap-10 mx-auto max-w-(--breakpoint-lg) mt-12">
+    <div class="mx-auto mt-12 grid max-w-3xl gap-8 sm:grid-cols-2">
       {pricing.map((item) => <PricingCard plan={item} />)}
     </div>
   </Container>
