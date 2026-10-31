@@ -17,16 +17,21 @@ import { Icon } from "astro-icon/components";
       format="avif"
     />
   </div>
-  <div>
+  <div class="hero-copy">
     <h1
       class="text-5xl lg:text-6xl xl:text-7xl font-bold lg:tracking-tight xl:tracking-tighter">
       Hi Tech Soft Solution
     </h1>
-    <p class="text-lg mt-4 text-slate-600 max-w-xl">
-    A business support tool like Tally, enables you to manage your day-to-day accounting and monitor the financial health of your organisation.<wbr /> This ultimately leads to increased productivity and profitability. But, when you are confronted with new business challenges, your business support systems need to measure up and deliver more, to ensure that your business continues to run smoothly.
-
-
-    </p>
+ <p class="text-lg mt-4 text-slate-600 max-w-xl">
+  A reliable business tool like Tally makes it easier to manage your daily
+  accounting, keep track of finances, and stay in control of your business.
+  As your business grows, your needs change too. That's why you need the
+  right tools and support to handle new challenges, simplify everyday tasks,
+  and keep your business running smoothly. With the right business solutions,
+  you can save time, improve accuracy, and make better decisions. This helps
+  you focus more on serving your customers, growing your business, and
+  achieving long-term success.
+</p>
     <div class="mt-6 flex flex-col sm:flex-row gap-3">
       <Link
         href="#"
@@ -47,3 +52,39 @@ import { Icon } from "astro-icon/components";
     </div>
   </div>
 </main>
+
+<style>
+  @keyframes hero-text-enter {
+    from {
+      opacity: 0;
+      transform: translateY(1rem);
+    }
+
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .hero-copy > h1,
+  .hero-copy > p,
+  .hero-copy > div {
+    animation: hero-text-enter 700ms ease-out both;
+  }
+
+  .hero-copy > p {
+    animation-delay: 120ms;
+  }
+
+  .hero-copy > div {
+    animation-delay: 240ms;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .hero-copy > h1,
+    .hero-copy > p,
+    .hero-copy > div {
+      animation: none;
+    }
+  }
+</style>
