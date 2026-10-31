@@ -3,6 +3,9 @@
 @plugin '@tailwindcss/typography';
 
 @theme {
+  --color-brand-blue: #1574b2;
+  --color-brand-green: #51ad4c;
+  --color-brand-light-blue: #6fb8d8;
   --font-sans:
     Bricolage Grotesque Variable, Inter Variable, Inter, ui-sans-serif,
     system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',

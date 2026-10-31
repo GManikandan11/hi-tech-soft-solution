@@ -1,19 +1,146 @@
-<footer class="my-20">
-  <p class="text-center text-sm text-slate-500">
-    Copyright © {new Date().getFullYear()} Astroship. All rights reserved.
-  </p>
-  <!--
-    Can we ask you a favor 🙏
-    Please keep this backlink on your website if possible.
-    or Purchase a commercial license from https://web3templates.com
-  -->
-  <p class="text-center text-xs text-slate-500 mt-1">
-    Made by <a
-      href="https://web3templates.com"
-      target="_blank"
-      rel="noopener"
-      class="hover:underline">
-      Web3Templates
-    </a>
-  </p>
+---
+import Container from "@/components/container.astro";
+
+const currentYear = new Date().getFullYear();
+
+const products = [
+  "TallyPrime",
+  "TallyPrime Server",
+  "Tally TSS",
+  "Tally Upgrade",
+  "Tally Academy",
+];
+
+const quickLinks = [
+  { label: "Home", href: "/" },
+  { label: "About Us", href: "/about" },
+  { label: "Services", href: "/pricing" },
+  { label: "Solutions", href: "/blog" },
+  { label: "Support", href: "/contact" },
+  { label: "Placement & Career", href: "/contact" },
+  { label: "Contact Us", href: "/contact" },
+];
+
+const socialPlatforms = ["Facebook", "Instagram", "LinkedIn", "YouTube", "Google Business"];
+---
+
+<footer class="mt-20 bg-brand-blue text-white">
+  <Container>
+    <div
+      class="grid items-start gap-10 py-12 sm:grid-cols-2 md:grid-cols-[1.1fr_0.9fr_0.9fr_1.5fr] md:gap-8 lg:py-16">
+      <section class="min-w-0" aria-labelledby="footer-social-heading">
+        <h2
+          id="footer-social-heading"
+          class="text-sm font-semibold uppercase tracking-wider">
+          Social Media Links
+        </h2>
+        <ul class="mt-5 flex flex-wrap gap-2">
+          {
+            socialPlatforms.map((platform) => (
+              <li>
+                <span
+                  aria-label={`${platform} profile link not provided`}
+                  title={`${platform} profile link not provided`}
+                  class="flex size-10 items-center justify-center rounded-full bg-white text-sm font-bold text-brand-blue">
+                  {platform === "Facebook"
+                    ? "f"
+                    : platform === "Instagram"
+                      ? "◎"
+                      : platform === "LinkedIn"
+                        ? "in"
+                        : platform === "YouTube"
+                          ? "▶"
+                          : "G"}
+                </span>
+              </li>
+            ))
+          }
+        </ul>
+      </section>
+
+      <nav class="min-w-0" aria-labelledby="footer-products-heading">
+        <h2
+          id="footer-products-heading"
+          class="text-sm font-semibold uppercase tracking-wider">
+          Products
+        </h2>
+        <ul class="mt-5 space-y-3">
+          {
+            products.map((product) => (
+              <li class="text-sm text-white/90">{product}</li>
+            ))
+          }
+        </ul>
+      </nav>
+
+      <nav class="min-w-0" aria-labelledby="footer-links-heading">
+        <h2
+          id="footer-links-heading"
+          class="text-sm font-semibold uppercase tracking-wider">
+          Quick Links
+        </h2>
+        <ul class="mt-5 space-y-3">
+          {
+            quickLinks.map(({ label, href }) => (
+              <li>
+                <a
+                  href={href}
+                  class="text-sm text-white/90 transition hover:text-brand-green">
+                  {label}
+                </a>
+              </li>
+            ))
+          }
+        </ul>
+      </nav>
+
+      <section class="min-w-0" aria-labelledby="footer-contact-heading">
+        <h2
+          id="footer-contact-heading"
+          class="text-sm font-semibold uppercase tracking-wider">
+          Contact Us
+        </h2>
+        <address class="mt-5 space-y-3 text-sm not-italic leading-6 text-white/90">
+          <p class="font-medium text-white">HI-TECH SOFT SOLUTIONS</p>
+          <p>
+            No. 74L, Drug Stores Complex,<br />
+            2nd Floor, Opp. Govt. Hr. Sec. School,<br />
+            Market Street, Ariyalur.
+          </p>
+          <p>
+            GSTIN/UIN: 33HWFPD8830K1ZB<br />
+            State Name: Tamil Nadu, Code: 33
+          </p>
+          <p>
+            Phone:
+            <a class="hover:text-brand-green" href="tel:+914312715919">
+              0431 - 2715919
+            </a>
+            /
+            <a class="hover:text-brand-green" href="tel:+914312714920">
+              2714920
+            </a>
+          </p>
+          <p>
+            Mobile:
+            <a class="hover:text-brand-green" href="tel:+919842447373">
+              +91 98424 47373
+            </a>
+          </p>
+          <p>
+            E-Mail:
+            <a class="break-all hover:text-brand-green" href="mailto:vsl@vsgroupsindia.com">
+              vsl@vsgroupsindia.com
+            </a>
+          </p>
+        </address>
+      </section>
+    </div>
+
+    <div class="border-t border-white/20 py-5">
+      <p class="text-center text-sm text-white/80">
+        © {currentYear} Hi-Tech Soft Solutions. All rights reserved.
+      </p>
+    </div>
+  </Container>
 </footer>

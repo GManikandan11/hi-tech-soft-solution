@@ -7,8 +7,12 @@ import { Picture } from "astro:assets";
 import Logo from "@/assets/hi-tech-soft-solution-logo.png";
 
 const menuitems = [
+    {
+    title: "About Us",
+    path: "/about",
+  },
   {
-    title: "Features",
+    title: "Products",
     path: "#",
     children: [
       { title: "Action", path: "/" },
@@ -18,25 +22,17 @@ const menuitems = [
     ],
   },
   {
-    title: "Pricing",
+    title: "Services",
     path: "/pricing",
   },
+
   {
-    title: "About",
-    path: "/about",
-  },
-  {
-    title: "Blog",
+    title: "Solutions",
     path: "/blog",
   },
   {
     title: "Contact",
     path: "/contact",
-  },
-  {
-    title: "Pro Version",
-    badge: true,
-    path: "https://astroship-pro.web3templates.com/",
   },
 ];
 ---
@@ -55,7 +51,7 @@ const menuitems = [
           format="avif"
         />
         <div class="block lg:hidden">
-          <MenuIcon class="w-4 h-4 text-gray-800" />
+          <MenuIcon class="w-4 h-4 text-brand-blue" />
         </div>
       </div>
       <MenuItems class="hidden w-full lg:w-auto mt-2 lg:flex lg:mt-0">
@@ -75,13 +71,13 @@ const menuitems = [
                   <li>
                     <a
                       href={item.path}
-                      class="flex lg:px-3 py-2 items-center text-gray-600 hover:text-gray-900">
+                      class="flex lg:px-3 py-2 items-center text-brand-blue hover:text-brand-green">
                       <span> {item.title}</span>
-                      {item.badge && (
-                        <span class="ml-1 px-2 py-0.5 text-[10px] animate-pulse font-semibold uppercase text-white bg-indigo-600 rounded-full">
+                      {/* {item.badge && (
+                        <span class="ml-1 px-2 py-0.5 text-[10px] animate-pulse font-semibold uppercase text-white bg-brand-green rounded-full">
                           New
                         </span>
-                      )}
+                      )} */}
                     </a>
                   </li>
                 )}
