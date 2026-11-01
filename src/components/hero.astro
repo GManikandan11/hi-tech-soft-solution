@@ -1,55 +1,54 @@
 ---
 import { Picture } from "astro:assets";
-import heroImage from "@/assets/4389.jpg";
+import heroImage from "@/assets/tally-img.png";
 import Link from "@/components/ui/link.astro";
 import { Icon } from "astro-icon/components";
 ---
 
-<main
-  class="grid lg:grid-cols-2 place-items-center pt-16 pb-8 md:pt-12 md:pb-24">
-  <div class="py-6 md:order-1 hidden md:block">
-    <Picture
-      src={heroImage}
-      alt="Astronaut in the air"
-      widths={[200, 400, 600]}
-      sizes="(max-width: 800px) 100vw, 620px"
-      loading="eager"
-      format="avif"
-    />
-  </div>
-  <div class="hero-copy">
-    <h1
-      class="text-5xl lg:text-6xl xl:text-7xl font-bold lg:tracking-tight xl:tracking-tighter">
-      Hi Tech Soft Solution
+<main class="hero-copy relative isolate grid overflow-hidden rounded-3xl bg-gradient-to-br from-blue-50 via-white to-emerald-50 px-6 py-10 sm:px-10 md:py-14 lg:grid-cols-[1.05fr_0.95fr] lg:items-center lg:px-14 lg:py-16">
+  <div class="relative z-10">
+    <span class="inline-flex items-center gap-2 rounded-full border border-brand-blue/15 bg-white/80 px-4 py-2 text-sm font-semibold text-brand-blue shadow-sm">
+      <span class="size-2 rounded-full bg-brand-green"></span>
+      TallyPrime solutions for growing businesses
+    </span>
+    <h1 class="mt-6 max-w-2xl text-4xl font-bold leading-tight tracking-tight text-slate-950 sm:text-5xl lg:text-6xl">
+      Make business accounting feel <span class="text-brand-blue">simpler.</span>
     </h1>
- <p class="text-lg mt-4 text-slate-600 max-w-xl">
-  A reliable business tool like Tally makes it easier to manage your daily
-  accounting, keep track of finances, and stay in control of your business.
-  As your business grows, your needs change too. That's why you need the
-  right tools and support to handle new challenges, simplify everyday tasks,
-  and keep your business running smoothly. With the right business solutions,
-  you can save time, improve accuracy, and make better decisions. This helps
-  you focus more on serving your customers, growing your business, and
-  achieving long-term success.
-</p>
-    <div class="mt-6 flex flex-col sm:flex-row gap-3">
-      <Link
-        href="#"
-        class="flex gap-1 items-center justify-center"
-        rel="noopener">
-        Read More
+    <p class="mt-5 max-w-xl text-lg leading-8 text-slate-600">
+      A reliable business tool like Tally makes it easier to manage your daily
+      accounting, keep track of finances, and stay in control of your business.
+      As your business grows, the right tools and support help simplify everyday
+      tasks and keep operations running smoothly.
+    </p>
+    <div class="mt-8 flex flex-col gap-3 sm:flex-row">
+      <Link href="/pricing" class="inline-flex items-center justify-center gap-2">
+        Explore TallyPrime
+        <Icon class="size-4" name="uil:arrow-right" />
       </Link>
       <Link
-        size="lg"
         style="outline"
-        rel="noopener"
-        href="contact"
-        class="flex gap-1 items-center justify-center"
-        >
-        <Icon class="text-blue w-4 h-4" name="uil:phone" />
-        Contact Us
+        href="/contact"
+        class="inline-flex items-center justify-center gap-2">
+        <Icon class="size-4" name="uil:phone" />
+        Talk to our team
       </Link>
     </div>
+    <div class="mt-8 flex flex-wrap gap-x-6 gap-y-2 text-sm font-medium text-slate-600">
+      <span class="inline-flex items-center gap-2"><Icon class="size-4 text-brand-green" name="uil:check-circle" />Setup &amp; training</span>
+      <span class="inline-flex items-center gap-2"><Icon class="size-4 text-brand-green" name="uil:check-circle" />GST &amp; inventory</span>
+    </div>
+  </div>
+  <div class="relative mt-8 lg:mt-0">
+    <div class="absolute inset-8 rounded-full bg-brand-blue/10 blur-3xl"></div>
+    <Picture
+      src={heroImage}
+      alt="Business team reviewing accounting and inventory information"
+      widths={[400, 600, 900]}
+      sizes="(max-width: 1024px) 100vw, 560px"
+      loading="eager"
+      format="avif"
+      class="relative mx-auto w-full max-w-xl drop-shadow-sm"
+    />
   </div>
 </main>
 
@@ -66,24 +65,21 @@ import { Icon } from "astro-icon/components";
     }
   }
 
-  .hero-copy > h1,
-  .hero-copy > p,
-  .hero-copy > div {
+  .hero-copy > div > * {
     animation: hero-text-enter 700ms ease-out both;
   }
 
-  .hero-copy > p {
+  .hero-copy > div > :nth-child(2) {
     animation-delay: 120ms;
   }
 
-  .hero-copy > div {
+  .hero-copy > div > :nth-child(3),
+  .hero-copy > div > :nth-child(4) {
     animation-delay: 240ms;
   }
 
   @media (prefers-reduced-motion: reduce) {
-    .hero-copy > h1,
-    .hero-copy > p,
-    .hero-copy > div {
+    .hero-copy > div > * {
       animation: none;
     }
   }

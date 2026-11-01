@@ -1,18 +1,24 @@
 ---
-// @ts-ignore
-import { Icon } from "astro-icon/components";
+const capabilities = [
+  "Accounting",
+  "GST billing",
+  "Inventory management",
+  "Data migration",
+  "Technical support",
+];
 ---
 
-<div class="mt-24">
-  <h2 class="text-center text-slate-500">    Complete Business Accounting Solutions</h2>
-  <div class="flex gap-8 md:gap-20 items-center justify-center mt-10 flex-wrap">
-
-    <Icon class="size-8 md:size-12" name="simple-icons:react" />
-    <Icon class="size-8 md:size-12" name="simple-icons:svelte" />
-    <Icon class="size-8 md:size-12" name="simple-icons:astro" />
-    <Icon class="size-8 md:size-16" name="simple-icons:tailwindcss" />
-    <Icon class="size-8 md:size-16" name="simple-icons:alpinedotjs" />
-    <Icon class="size-8 md:size-12" name="simple-icons:vercel" />
-
-  </div>
-</div>
+<section class="mt-20 border-y border-slate-200 py-10 md:mt-24" aria-label="Our TallyPrime capabilities">
+  <p class="text-center text-sm font-semibold uppercase tracking-[0.16em] text-slate-500">
+    Practical support for every step
+  </p>
+  <ul class="mt-6 flex flex-wrap items-center justify-center gap-3">
+    {
+      capabilities.map((capability) => (
+        <li class="rounded-full border border-slate-200 bg-white px-5 py-2.5 text-sm font-medium text-slate-700 shadow-sm">
+          {capability}
+        </li>
+      ))
+    }
+  </ul>
+</section>

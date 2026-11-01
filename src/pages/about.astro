@@ -27,39 +27,39 @@ const publishedTeamMembers = await getCollection("team", ({ data }) => {
       <Fragment slot="desc">We are a passionate team committed to helping businesses work smarter.</Fragment>
     </Sectionhead>
 
-    <div class="flex flex-col gap-3 mx-auto max-w-4xl mt-16">
-      <h2 class="font-bold text-3xl text-gray-800">
+    <div class="mx-auto mt-14 max-w-4xl rounded-3xl border border-slate-200 bg-white p-7 shadow-sm sm:p-10">
+      <h2 class="text-2xl font-bold tracking-tight text-slate-900 sm:text-3xl">
         Supporting Businesses with Reliable Technology Solutions
       </h2>
-      <p class="text-lg leading-relaxed text-slate-500">
+      <p class="mt-4 text-lg leading-8 text-slate-600">
       At Hi-Tech Soft Solutions, we help businesses manage their accounting and daily operations with reliable TallyPrime solutions. From software installation and company setup to GST billing, inventory management and technical support, we provide practical solutions based on your business requirements.
 
 Our goal is to make accounting easier, improve everyday business processes and provide dependable support that helps businesses stay organised and grow with confidence.
       </p>
     </div>
     <div>
-      <h2 class="font-bold text-3xl text-gray-800 mt-16 text-center">
+      <h2 class="mt-16 text-center text-3xl font-bold tracking-tight text-slate-900">
         Awards And Achievements
       </h2>
     </div>
-    <div class="grid md:grid-cols-3 gap-10 mx-auto max-w-5xl mt-12">
+    <div class="mx-auto mt-8 grid max-w-5xl gap-6 sm:grid-cols-2 md:grid-cols-3">
       {
         publishedTeamMembers.map((teamMemberEntry) => (
-          <div class="group">
-            <div class="w-full aspect-square">
+          <div class="group rounded-2xl border border-slate-200 bg-white p-4 shadow-sm transition hover:-translate-y-1 hover:shadow-lg">
+            <div class="aspect-square overflow-hidden rounded-xl bg-slate-100">
               <Picture
                 src={teamAvatars[teamMemberEntry.id]}
                 alt={teamMemberEntry.data.avatar.alt}
                 sizes="(max-width: 800px) 100vw, 400px"
                 width={400}
                 height={400}
-                class="w-full rounded-sm transition group-hover:-translate-y-1 group-hover:shadow-xl bg-white object-cover object-center aspect-square"
+                class="aspect-square w-full object-cover object-center transition duration-500 group-hover:scale-105"
               />
             </div>
 
             <div class="mt-4 text-center">
-              <h2 class="text-lg text-gray-800">{teamMemberEntry.data.name}</h2>
-              <h3 class="text-sm text-slate-500">
+              <h2 class="text-lg font-semibold text-slate-900">{teamMemberEntry.data.name}</h2>
+              <h3 class="mt-1 text-sm text-slate-500">
                 {teamMemberEntry.data.title}
               </h3>
             </div>
