@@ -27,17 +27,22 @@ const { Content } = await render(entry);
         class="text-4xl lg:text-5xl font-bold lg:tracking-tight mt-1 lg:leading-tight">
         {entry.data.title}
       </h1>
-      <div class="flex gap-2 mt-3 items-center flex-wrap md:flex-nowrap">
-        <span class="text-gray-400">
-          {entry.data.author}
-        </span>
-        <span class="text-gray-400">•</span>
-        <time
-          class="text-gray-400"
-          datetime={entry.data.publishDate.toISOString()}>
-          {entry.data.publishDate.toDateString()}
-        </time>
-        <span class="text-gray-400 hidden md:block">•</span>
+      <div class="mt-3 flex flex-wrap items-center gap-2">
+        {entry.data.author && (
+          <span class="text-gray-400">{entry.data.author}</span>
+        )}
+        {entry.data.author && entry.data.publishDate && (
+          <span class="text-gray-400">•</span>
+        )}
+        {entry.data.publishDate && (
+          <time
+            class="text-gray-400"
+            datetime={entry.data.publishDate.toISOString()}>
+            {entry.data.publishDate.toDateString()}
+          </time>
+        )}
+        {(entry.data.author || entry.data.publishDate) &&
+          entry.data.tags.length > 0 && <span class="text-gray-400">•</span>}
         <div class="w-full md:w-auto flex flex-wrap gap-3">
           {
             entry.data.tags.map((tag) => (
@@ -55,7 +60,7 @@ const { Content } = await render(entry);
       <a
         href="/blog"
         class="bg-gray-100 px-5 py-3 rounded-md hover:bg-gray-200 transition"
-        >← Back to Blog</a
+        >← Back to Solution</a
       >
     </div>
   </Container>

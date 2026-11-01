@@ -1,10 +1,9 @@
 ---
 draft: false
-name: "Robert Palmer"
-title: "Marketing Engineer"
+name: "Business Solutions Team"
+title: "Customer Assistance"
 avatar: {
-    src: "https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?&fit=crop&w=400&h=400",
-    alt: "Robert Palmer"
+    alt: "Business Solutions Team"
 }
 publishDate: "2022-11-09 15:39"
 ---
